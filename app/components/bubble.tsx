@@ -1,11 +1,18 @@
-const bubble = ({message}) => {
+import { Message } from 'ai';
+import React from 'react';
 
-    const {content,role} = message
+interface BubbleProps {
+    message: Message;
+}
+
+const Bubble: React.FC<BubbleProps> = ({ message }) => {
+    const { content, role } = message;
+
     return (
         <div className={`${role} bubble`}>
             {content}
         </div>
+    );
+};
 
-    )
-}
-export default bubble
+export default Bubble;

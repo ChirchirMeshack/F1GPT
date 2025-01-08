@@ -1,12 +1,20 @@
-import {text} from "node:stream/consumers";
+import React from 'react';
 
-const PromptSuggestonButton = ({text,onClick}) => {
-    return (
-        <button className="prompt-suggest-button"
-        onClick={onclick}>
-            {text}
-
-        </button>
-    )
+interface PromptSuggestonButtonProps {
+    text: string;
+    onClick: () => void;
 }
-export default PromptSuggestonButton
+
+const PromptSuggestonButton: React.FC<PromptSuggestonButtonProps> = ({ text, onClick }) => {
+    return (
+        <button
+            className="prompt-suggest-button"
+            onClick={onClick} // Fixed onclick to onClick
+            type="button"
+        >
+            {text}
+        </button>
+    );
+};
+
+export default PromptSuggestonButton;

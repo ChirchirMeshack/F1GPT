@@ -45,8 +45,85 @@ body {
 }
 
 /* Logo styling */
+/* Logo Container Styles */
+.logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Logo Image Styles */
 .logo {
-    margin-bottom: 32px;
+    width: 250px; /* Default size */
+    height: auto;
+    transition: all 0.3s ease; /* Smooth transition for size changes */
+    object-fit: contain; /* Maintains aspect ratio */
+}
+
+/* Responsive Design */
+/* Large screens (above 1200px) */
+@media screen and (min-width: 1200px) {
+    .logo {
+        width: 300px;
+    }
+}
+
+/* Medium screens (between 768px and 1199px) */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .logo {
+        width: 220px;
+    }
+}
+
+/* Small tablets (between 481px and 767px) */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .logo {
+        width: 180px;
+    }
+}
+
+/* Mobile phones (below 480px) */
+@media screen and (max-width: 480px) {
+    .logo {
+        width: 150px;
+    }
+
+    .logo-container {
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .logo {
+        filter: brightness(1.1); /* Slightly brighten logo in dark mode if needed */
+    }
+}
+
+/* Print media */
+@media print {
+    .logo {
+        width: 200px;
+    }
+}
+
+/* Ensure logo maintains quality during scaling */
+.logo {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 /* Content container styling */
